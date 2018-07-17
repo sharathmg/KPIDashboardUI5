@@ -1,0 +1,91 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout"
+	xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml"
+	xmlns:form="sap.ui.layout.form" controllerName="com.kpi.controller.KPIDetails">
+
+
+			<Page id="kpiDetail" title="{i18n>detailTitle}" navButtonPress="onNavBack"
+				class="'sapUiResponsiveMargin" showNavButton="true">
+			<content>
+			<Bar>
+
+				<contentMiddle>
+					<Title id="kpiDetailTitle" text="{i18n>kpiDetailTitle}" class="textBold"></Title>
+				</contentMiddle>
+			</Bar>
+				<!-- <VBox class="textBlack"> -->
+				<Panel expandable="true" expanded="true" headerText="General Details"
+					width="auto" class="sapUiResponsiveMargin">
+					<form:SimpleForm id="genForm" editable="true"
+						labelSpanL="5">
+						<form:content>
+							<VBox justifyContent="Start">
+								<Label text="KPI Name" class="textBlack" design="Bold" />
+								<Text id="txtKpiName" />
+								<Label text="KPI Description" class="textBlack" design="Bold" />
+								<Text id="txtKPIDesc" />
+								<Label text="Key Dimension" class="textBlack" design="Bold" />
+								<Text id="txtKPIDim" />
+							</VBox>
+						</form:content>
+					</form:SimpleForm>
+				</Panel>
+				<Panel expandable="true" expanded="false" headerText="Business Details"
+					width="auto" class="sapUiResponsiveMargin">
+					<form:SimpleForm id="busForm" editable="true"
+						labelSpanL="5">
+						<form:content>
+							<VBox justifyContent="Start">
+								<Label text="Business Drivers" class="textBlack" design="Bold" />
+								<Text id="txtbusdriver" />
+								<Label text="Business Value" class="textBlack" design="Bold" />
+								<Text id="txtBusValue" />
+								<Label text="Business Role" class="textBlack" design="Bold" />
+								<Text id="txtBusRole" />
+							</VBox>
+						</form:content>
+					</form:SimpleForm>
+				</Panel>
+				<Panel expandable="true" expanded="false" headerText="Technical Details"
+					width="auto" class="sapUiResponsiveMargin">
+					<form:SimpleForm id="techForm" editable="true"
+						labelSpanL="5">
+						<form:content>
+							<VBox justifyContent="Start">
+								<Label text="Delivery Tools" class="textBlack" design="Bold" />
+								<Text id="txtDelTool" />
+								<Label text="KPI Type" class="textBlack" design="Bold" />
+								<Text id="txtKPIType" />
+								<Label text="System Compatiblity" class="textBlack"
+									design="Bold" />
+								<Text id="txtSystemCompatible" />
+							</VBox>
+						</form:content>
+					</form:SimpleForm>
+				</Panel>
+
+				<Panel expandable="true" expanded="false" headerText="Useful Links"
+					width="auto" class="sapUiResponsiveMargin">
+					<form:SimpleForm id="linkForm" editable="true"
+						labelSpanL="5">
+						<VBox justifyContent="Start" alignContent="Start">
+
+							<Link id="idSapLink" text="" target="_blank"
+								href="/sap/bc/gui/sap/its/zme2n?sap-client=200"></Link>
+							<Text id="idSapLinkText" text=""></Text>
+							<Link id="idFioriLink" text="" target="_blank"
+								href="/sap/bc/ui5_ui5/ui2/ushell/shells/abap/FioriLaunchpad.html#DeliveredQuantity-analyzeSBKPIDetailsS4HANA?CatalogId=X-SAP-UI2-CATALOGPAGE%253ASAP_TC_PRC_COMMON&amp;ChipId=00O2TPKTQCDUX5BIE8AYZFEMU&amp;EvaluationId=.SAP.MM.PUR.OVERDUEPO&amp;TileType=DT-CM&amp;sap-xapp-state=ASIRHQOKRJF4Z97KYZ96TM8AP2PK2ZDA1J9H31VJ&amp;/sap-iapp-state=ASIRHPWWDLO7P33ZD5TDOENQ05B1UR1ZO6EVNBLC"></Link>
+							<Text id="idFioriLinkText" text=""></Text>
+						</VBox>
+						<form:content>
+
+						</form:content>
+					</form:SimpleForm>
+				</Panel>
+
+
+			</content>
+
+			</Page>
+
+
+</mvc:View>

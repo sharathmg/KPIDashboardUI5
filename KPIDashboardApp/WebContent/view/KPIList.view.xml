@@ -1,0 +1,51 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m"
+		controllerName="com.kpi.controller.KPIList" xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page id="kpiList" navButtonPress="onNavBack" class="sapUiFioriObjectPage" title="{i18n>detailTitle}" showNavButton="true" >
+		<content>
+			<Bar>
+
+				<contentMiddle>
+					<Title id="kpiTitle" text="{i18n>kpiListTitle}" class="textBold"></Title>
+				</contentMiddle>
+			</Bar>
+		 <Label id="_industryLbl" visible="false"></Label>
+		<Label id="_sectorLbl" visible="false"></Label>
+		<ScrollContainer horizontal="true" vertical="true" focusable="true" >
+					<Table id="_customTable" items="{/}" height="40%" width="auto" noDataText="No Data"  growing="true" growingThreshold="500" growingScrollToLoad="true" >
+					<headerToolbar>
+			<OverflowToolbar>
+				<Title id="_tabletitle" text="Line Items" level="H2"/>
+				<ToolbarSpacer></ToolbarSpacer>
+				<Button icon="sap-icon://download" type="Transparent"
+									tooltip="Export to excel" press="exportToExcel" >
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow" />
+					</layoutData>
+				</Button>
+			</OverflowToolbar>
+		</headerToolbar>
+		<columns>
+			<Column id="kpiId" width="12em" visible="false" ><Text text="KPI ID" /></Column>
+			<Column id="ProcessareaNam" minScreenWidth="Tablet" visible="false" ><Text text="Process area" /></Column>
+			<Column id="KpiNam" hAlign="Center" class="textBold" ><Text text="KPI Name" class="textBold" /></Column>
+			<Column id="KpiDesc" minScreenWidth="Tablet" demandPopin="true" hAlign="Center" class="textBold" ><Text text="KPI Description" class="textBold" /></Column>
+			<Column id="PgrpNam" minScreenWidth="Tablet" hAlign="Center" class="textBold" demandPopin="true"><Text text="Process Group Name" class="textBold" /></Column>
+		</columns>
+		<items>
+			<ColumnListItem type="Navigation" press="onClick" >
+				<cells>
+					<Text text="{KpiId}" />
+					<Text text="{ProcessareaNam}" />
+					<Text text="{KpiNam}" />
+					<Text text="{KpiDesc}" />
+					<Text text="{PgrpNam}" />
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+	</ScrollContainer>
+	
+		</content>
+
+	</Page>
+</core:View>

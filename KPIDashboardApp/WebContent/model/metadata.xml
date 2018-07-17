@@ -1,0 +1,73 @@
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+<edmx:DataServices m:DataServiceVersion="2.0">
+<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ZGS_KPI_DASHBOARD_PROCAREA_KPI_SRV" xml:lang="en" sap:schema-version="1">
+<EntityType Name="Industry" sap:content-version="1">
+<Key>
+<PropertyRef Name="IndustryID"/>
+</Key>
+<Property Name="IndustryID" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false"/>
+<Property Name="Name" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false"/>
+<Property Name="Count" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false"/>
+<Property Name="Image" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false"/>
+<Property Name="Unit" Type="Edm.String" Nullable="false" sap:creatable="false" sap:updatable="false"/>
+</EntityType>
+<EntityType Name="ProcessAreaKPI" sap:content-version="1">
+<Key>
+<PropertyRef Name="IndustryId"/>
+<PropertyRef Name="ProcessareaId"/>
+<PropertyRef Name="KpiId"/>
+</Key>
+<Property Name="IndustryId" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="Industry ID"/>
+<Property Name="ProcessareaId" Type="Edm.String" Nullable="false" MaxLength="5" sap:label="Process Area ID"/>
+<Property Name="ProcessareaNam" Type="Edm.String" Nullable="false" MaxLength="50" sap:label="Process Area"/>
+<Property Name="KpiId" Type="Edm.String" Nullable="false" MaxLength="10" sap:label="KPI ID"/>
+<Property Name="KpiNam" Type="Edm.String" Nullable="false" MaxLength="100" sap:label="KPI"/>
+<Property Name="KpiDesc" Type="Edm.String" Nullable="false" MaxLength="250" sap:label="Description"/>
+<Property Name="PgrpNam" Type="Edm.String" Nullable="false" MaxLength="100" sap:label="Process Group"/>
+<Property Name="ProcessIpNam" Type="Edm.String" Nullable="false" MaxLength="100" sap:label="Process IP"/>
+<Property Name="Priority" Type="Edm.String" Nullable="false" MaxLength="1" sap:label="KPI Priority"/>
+</EntityType>
+<EntityContainer Name="ZGS_KPI_DASHBOARD_PROCAREA_KPI_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx">
+<EntitySet Name="IndustrySet" EntityType="ZGS_KPI_DASHBOARD_PROCAREA_KPI_SRV.Industry" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:searchable="true" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+<EntitySet Name="ProcessAreaKPISet" EntityType="ZGS_KPI_DASHBOARD_PROCAREA_KPI_SRV.ProcessAreaKPI" sap:creatable="false" sap:updatable="false" sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+</EntityContainer>
+<Annotations Target="ZGS_KPI_DASHBOARD_PROCAREA_KPI_SRV.ProcessAreaKPI"
+                xmlns="http://docs.oasis-open.org/odata/ns/edm">
+                <Annotation Term="com.sap.vocabularies.UI.v1.LineItem">
+                    <Collection>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="IndustryId" Path="IndustryId"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="ProcessareaId" Path="ProcessareaId"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="ProcessareaNam" Path="ProcessareaNam"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="KpiId" Path="KpiId"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="KpiNam" Path="KpiNam"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="KpiDesc" Path="KpiDesc"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="PgrpNam" Path="PgrpNam"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="ProcessIpNam" Path="ProcessIpNam"/>
+                        </Record>
+                        <Record Type="UI.DataField">
+                            <PropertyValue Property="Priority" Path="Priority"/>
+                        </Record>
+                    </Collection>
+                </Annotation>
+            </Annotations>
+<atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="http://ussltcsnl1325.solutions.glbsnet.com:8001/sap/opu/odata/SAP/ZGS_KPI_DASHBOARD_PROCAREA_KPI_SRV/$metadata"/>
+<atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="http://ussltcsnl1325.solutions.glbsnet.com:8001/sap/opu/odata/SAP/ZGS_KPI_DASHBOARD_PROCAREA_KPI_SRV/$metadata"/>
+</Schema>
+</edmx:DataServices>
+
+</edmx:Edmx>

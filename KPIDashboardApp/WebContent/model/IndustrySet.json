@@ -1,0 +1,32 @@
+{
+	"Industry" : [
+		{
+	"IndustryID" : "IndustryID 1",
+	"Name" : "Food and Beverages",
+	"Count" : "44",
+	"Image" : "sap-icon://fridge",
+	"Unit" : "High Priority KPI"
+	},
+	{
+	"IndustryID": "IndustryID 2",
+	"Name": "Life Science",
+	"Count": "66",
+	"Image": "sap-icon://stethoscope",
+	"Unit" : "High Priority KPI"
+	},
+	{
+	"IndustryID": "IndustryID 3",
+	"Name": "Retail and Distribution",
+	"Count": "88",
+	"Image": "sap-icon://cart-full",
+	"Unit" : "High Priority KPI"
+	},
+	{
+	"IndustryID": "IndustryID 4",
+	"Name" : "Manufacturing",
+	"Count" : "45",
+	"Image" : "sap-icon://wrench",
+	"Unit" : "High Priority KPI"
+}
+]
+}

@@ -1,0 +1,42 @@
+<core:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc"
+	xmlns="sap.m" controllerName="com.kpi.controller.SectorDetail"
+	xmlns:html="http://www.w3.org/1999/xhtml">
+	<Page id="sectorDetailPage" showNavButton="{device>/isPhone}"
+		navButtonPress="onNavBack" class="sapUiFioriObjectPage" title="{i18n>detailTitle}"
+		icon="sap-icon://account" >
+		<content>
+			<Bar>
+
+				<contentMiddle>
+					<Title id="titleSector" text="{i18n>sectorDetailTitle}" class="textBold"></Title>
+				</contentMiddle>
+			</Bar>
+			<Label id="_industryLbl" visible="false"></Label>
+			<HBox id="vbox0" width="100%" items="{/}" alignItems="Center"
+				wrap="Wrap" justifyContent="Center" class="">
+				<items>		
+			<GenericTile xmlns:sap.suite.ui.commons="sap.suite.ui.commons"
+				id="_sectorTile0" header="{SectorName}" press="onSelect" headerImage="{Image}"
+				size="S" class="sapUiSmallMargin tile">
+				<tileContent>
+					<TileContent xmlns:sap.suite.ui.commons="sap.suite.ui.commons"
+						id="_sectorContent0" unit="{Unit}" class="textBold">
+						<content>
+							<NumericContent tooltip="{AltText}" id="_sectorContent1"
+								value="{Count}" valueColor="Neutral" class="textBold" />
+						</content>
+					</TileContent>
+
+				</tileContent>
+
+			</GenericTile>
+			</items>
+			</HBox>
+		</content>
+		<footer>
+		<Toolbar>
+			<SearchField />
+		</Toolbar>
+		</footer>
+	</Page>
+</core:View>

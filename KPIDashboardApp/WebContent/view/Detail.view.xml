@@ -1,0 +1,167 @@
+<mvc:View xmlns:mvc="sap.ui.core.mvc" xmlns:l="sap.ui.layout"
+	xmlns:f="sap.ui.layout.form" xmlns:layout="sap.ui.layout" xmlns:viz="sap.viz.ui5.controls"
+	xmlns:viz.feeds="sap.viz.ui5.controls.common.feeds" xmlns:smartTable="sap.ui.comp.smarttable"
+	xmlns:viz.data="sap.viz.ui5.data" xmlns:t="sap.ui.table" xmlns:core="sap.ui.core"
+	xmlns="sap.m" controllerName="com.kpi.controller.Detail" height="100%">
+	<Page id="detailPage" navButtonPress="onNavBack" class="sapUiFioriObjectPage" title="{i18n>detailTitle}" enableScrolling="false" showNavButton="true">
+	<!-- 	<customHeader>
+		<Bar>
+				<contentLeft>
+					<Button id="_homeButton" type="Transparent" icon="sap-icon://nav-back"
+						press="onNavBack" />
+				</contentLeft>
+					</Bar>
+		</customHeader> -->
+		 <content>
+			<Bar>
+
+				<contentMiddle>
+					<Title text="{i18n>graphTitle}" id="titleProcessArea" class="textBold"></Title>
+					<!-- <SearchField id="graphSearchField" liveChange="onSearch"
+						showRefreshButton="{device>/isNoTouch}" placeholder="{i18n>master1SearchPlaceholder}"
+						search="onSearch" tooltip="{i18n>master1SearchTooltip}" width="100%"></SearchField> -->
+				</contentMiddle>
+			</Bar>		 
+		 <Label id="_industryLbl" visible="false"></Label>
+		<Label id="_sectorLbl" visible="false"></Label>
+<!-- 		 <Panel expandable="true" expanded="true" width="auto" class="sapUiResponsiveMargin" > -->
+			<!-- <layout:VerticalLayout>
+				<VBox direction="Row" id="vbox0" justifyContent="Start"
+					alignContent="Start" visible="false">
+					<items> -->
+						<!--<Label id="label3" text="Try out the Layout Editor and then click 
+							Run." textAlign="Center" width="100%" /> -->
+						<!--<viz:VizFrame xmlns="sap.viz" id="idpiechart2" title="{ProcessName}" 
+							selectData="onPress" height="250px" width="400px" vizType="pie"/> -->
+						<!--<viz:VizFrame xmlns="sap.viz" id="idpiechart1" height="250px" width="400px" 
+							vizType="pie"/> <viz:VizFrame xmlns="sap.viz" id="idpiechart" height="250px" 
+							width="400px" vizType="pie"/> -->
+							 <layout:FixFlex id='chartFixFlex' minFlexSize="600" fixContentSize="5%" fixFirst="false" >
+			 				<layout:flexContent>
+						<viz:VizFrame xmlns="sap.viz" id="idVizFrame" uiConfig="{applicationSet:'fiori'}" selectData="onSelect" width="100%" height="100%" vizType="stacked_bar" >
+							<viz:dataset>
+								<viz.data:FlattenedDataset data="{/}">
+									<viz.data:dimensions>
+										<viz.data:DimensionDefinition
+											name="Process Area" value="{ProcessAreaID}" />
+										<viz.data:DimensionDefinition
+											name="Priority" value="{Priority}" />
+									</viz.data:dimensions>
+
+									<viz.data:measures>
+										<viz.data:MeasureDefinition name="KPI Count"
+											value="{Value}" />
+									</viz.data:measures>
+								</viz.data:FlattenedDataset>
+							</viz:dataset>
+
+							<viz:feeds>
+								<viz.feeds:FeedItem uid="valueAxis" type="Measure"
+									values="KPI Count" />
+								<viz.feeds:FeedItem uid="categoryAxis" type="Dimension"
+									values="Process Area" />
+								<viz.feeds:FeedItem uid="color" type="Dimension"
+									values="Priority" />
+
+							</viz:feeds>
+						</viz:VizFrame>
+							</layout:flexContent>
+					<layout:fixContent >
+					</layout:fixContent>
+</layout:FixFlex>
+<!-- </Panel> -->
+					<!-- <t:Table id="_customTable" height="40%" width="auto"
+						selectionBehavior="sap.ui.table.SelectionBehavior.RowOnly"
+						selectionMode="None" rows="{/}" visibleRowCount="4" sort="sortDeliveryDate" >
+						<t:toolbar>
+							<Toolbar class="tableTitle">
+								<Title id="_tabletitle" text="Line Items" class="textBold"></Title>
+								<Label id="_industryLbl" visible="false"></Label>
+								<Label id="_sectorLbl" visible="false"></Label>
+								<ToolbarSpacer />
+								<Button icon="sap-icon://download" type="Transparent"
+									tooltip="Export to excel" press="exportToExcel" />
+							</Toolbar>
+						</t:toolbar>
+						
+						<t:columns id="header" class="tableHeader">
+							<t:Column id="kpiId" visible="false" minScreenWidth="Tablet" demandPopin="true">
+								<Label text="KPI ID" class="textBold"/>
+								<t:template>
+									<Text text="{KpiId}" class="textBlack"/>
+								</t:template>
+							</t:Column>
+							<t:Column id="ProcessareaNam" width="6rem" sortProperty="ProcessareaNam"
+								filterProperty="ProcessareaNam" visible="false" minScreenWidth="Tablet" demandPopin="true" >
+								<Label text="Process area" class="textBold"/>
+								<t:template>
+									<Text text="{ProcessareaNam}" class="textBlack"/>
+								</t:template>
+							</t:Column>
+							<t:Column id="KpiNam" width="6rem" sortProperty="KpiNam"
+								filterProperty="KpiNam" minScreenWidth="" demandPopin="false">
+								<Label text="KPI Name" class="textBold"/>
+								<t:template>
+									<Text text="{KpiNam}" class="textBlack"/>
+								</t:template>
+							</t:Column>
+							<t:Column id="KpiDesc" width="6rem" sortProperty="KpiDesc"
+								filterProperty="KpiDesc" minScreenWidth="Tablet" demandPopin="true">
+								<Label text="KPI Description" class="textBold"/>
+								<t:template>
+									<Text text="{KpiDesc}" class="textBlack"/>
+								</t:template>
+							</t:Column>
+							<t:Column id="PgrpNam" width="6rem" minScreenWidth="Tablet" demandPopin="true">
+								<Label text="Process Group Name" sortProperty="PgrpNam"
+									filterProperty="PgrpNam" class="textBold"/>
+								<t:template>
+									<Text text="{PgrpNam}" class="textBlack"/>
+								</t:template>
+							</t:Column>
+							<t:Column id="_BtnCol" hAlign="End" width="2rem" minScreenWidth="Tablet" demandPopin="true">
+								<t:template>
+									<Button id="_detailButton" type="Transparent"
+										icon="sap-icon://navigation-right-arrow" press="onClick" />
+								</t:template>
+							</t:Column>
+						</t:columns>
+					</t:Table> -->
+			<!-- 		<ScrollContainer horizontal="true" vertical="true" focusable="true" >
+					<Table id="_customTable" items="{/}" height="40%" width="auto" noDataText="No Data"  growing="true" growingThreshold="500" growingScrollToLoad="true" >
+					<headerToolbar>
+			<OverflowToolbar>
+				<Title id="_tabletitle" text="Line Items" level="H2"/>
+				<ToolbarSpacer></ToolbarSpacer>
+				<Button icon="sap-icon://download" type="Transparent"
+									tooltip="Export to excel" press="exportToExcel" >
+					<layoutData>
+						<OverflowToolbarLayoutData priority="NeverOverflow" />
+					</layoutData>
+				</Button>
+			</OverflowToolbar>
+		</headerToolbar>
+		<columns>
+			<Column id="kpiId" width="12em" visible="false" ><Text text="KPI ID" /></Column>
+			<Column id="ProcessareaNam" minScreenWidth="Tablet" visible="false" ><Text text="Process area" /></Column>
+			<Column id="KpiNam" hAlign="Center" class="textBold" ><Text text="KPI Name" class="textBold" /></Column>
+			<Column id="KpiDesc" minScreenWidth="Tablet" demandPopin="true" hAlign="Center" class="textBold" ><Text text="KPI Description" class="textBold" /></Column>
+			<Column id="PgrpNam" minScreenWidth="Tablet" hAlign="Center" class="textBold" demandPopin="true"><Text text="Process Group Name" class="textBold" /></Column>
+		</columns>
+		<items>
+			<ColumnListItem type="Navigation" press="onClick" >
+				<cells>
+					<Text text="{KpiId}" />
+					<Text text="{ProcessareaNam}" />
+					<Text text="{KpiNam}" />
+					<Text text="{KpiDesc}" />
+					<Text text="{PgrpNam}" />
+				</cells>
+			</ColumnListItem>
+		</items>
+	</Table>
+	</ScrollContainer>	 -->	
+		</content>
+		
+	</Page>
+</mvc:View>

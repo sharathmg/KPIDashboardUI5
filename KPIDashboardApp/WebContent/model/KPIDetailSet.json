@@ -1,0 +1,13 @@
+{
+	"KPIDetails" : [
+		{
+	"KpiId" : "OTC0001",
+	"KpiDesc" : "The number of days required to proces Customer order , from the time when the order is Placed until the time it is recevied by the customer",
+	"KeyDimension" : "Sales Area ,Order type Plant Shipping point , POD date",
+	"BusinessValue" : "Reduction in Delay and allocating resources",
+	"BusinessRole" : "",
+	DeliveryTools : "Fiori Apps/HANA Live/CDS VIews"
+	}
+}
+]
+}

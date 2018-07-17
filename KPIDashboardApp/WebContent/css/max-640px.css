@@ -1,0 +1,81 @@
+html{
+	font-size: small;
+}
+.spacerTop {
+    margin-top: 2rem;
+}
+.textBold {
+	font-weight: bold;
+	color: black;	
+}
+.textBlack{
+	color: black;
+}
+.tile{
+/* 	background-color: black;
+	color: white;
+	font-weight: bold;
+	font-size: 15px; */
+	background-color: black;
+	border-color: black;
+    border-style: solid;
+    border-width: medium;
+}
+.sapMGT.OneByOne {
+    width: 15rem;
+    height: 11rem;
+}
+.simple_form label {
+  float: left;
+  text-align: left;
+}
+
+.tHeader{
+	background-color: lightgray;
+	border-style: solid;	
+}
+
+.contentMaster{
+/* 	margin-bottom: 60px;
+	padding: 10px */
+	background-color: black;
+}
+
+.sapMTitle{
+	font-weight: bolder;
+    font-size: larger;
+}
+.sapUiTableColHdrCnt {
+    background-color: darkgray;
+}
+/* For the text inside tile */
+.sapMTextLineClamp {
+    display: -webkit-box;
+    color: white;
+    -webkit-box-orient: vertical;
+    font-weight: bolder;
+    font-size: initial;
+}
+.sapMNCValueScr {
+    color: white;
+}
+.sapMTileCntFtrTxt {
+    color: white;
+}
+.valignTop {
+	margin-top: 1;
+}
+/* To Make background white */
+.sapMGlobalBackgroundImage, .sapUiGlobalBackgroundImage{
+	background-color: white;
+}
+
+/* For Page header titles */
+.sapMIBar-CTX .sapMTitle {
+    color: white;
+}
+
+/* KPI Detail Links*/
+.link{
+	color: blue;
+}

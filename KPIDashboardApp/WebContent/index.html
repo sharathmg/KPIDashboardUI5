@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html>
+
+	<head>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<title>KPI DashBoard</title>
+
+		<script id="sap-ui-bootstrap"
+			src="https://sapui5.netweaver.ondemand.com/resources/sap-ui-core.js"
+			data-sap-ui-libs="sap.m"
+			data-sap-ui-theme="sap_bluecrystal"
+			data-sap-ui-xx-bindingSyntax="complex"
+			data-sap-ui-resourceroots='{"com.kpi": "./"}'
+			data-sap-ui-preload="sync"
+			 >
+		</script>
+		
+		<link rel="stylesheet" media="(max-width: 750px)" href="css/max-640px.css">
+		<link rel="stylesheet" media="(min-width: 751px)" type="text/css" href="css/style.css">
+
+		<script>
+			sap.ui.getCore().attachInit(function() {
+				new sap.m.Shell({
+					app: new sap.ui.core.ComponentContainer({
+						height : "100%",
+						name : "com.kpi"
+					})
+				}).placeAt("content");
+			});
+		</script>
+	</head>
+
+	<body class="sapUiBody" id="content">
+	</body>
+
+</html>

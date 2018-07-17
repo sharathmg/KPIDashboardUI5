@@ -1,0 +1,82 @@
+<mvc:View controllerName="com.kpi.controller.Master"
+	displayBlock="true" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m">
+	<Page id="master1Page" title="{i18n>master1Title}" >
+		<customHeader class="contentMaster">
+			<Bar class="contentMaster">
+				<contentLeft >
+					<Button id="_homeButton" type="Transparent" icon="sap-icon://home"
+						press="onHome" />
+				</contentLeft>
+				<contentMiddle >
+					<Image id="_imgBackground" src="./images/DeloitteLogo.jpg"
+						press="onHome" height="44px" width="100px" />
+				</contentMiddle>
+			</Bar>
+		</customHeader>
+		<subHeader >
+			<Bar id="master1SearchBar" >
+				<contentMiddle>
+					<SearchField id="master1SearchField" liveChange="onSearch"
+						showRefreshButton="{device>/isNoTouch}" placeholder="{i18n>master1SearchPlaceholder}"
+						search="onSearch" tooltip="{i18n>master1SearchTooltip}" width="100%"></SearchField>
+				</contentMiddle>
+			</Bar>
+		</subHeader>
+		<content id="_content" class="sapUiSmallMargin">
+			<HBox id="vbox0" width="100%" items="{/}" alignItems="Center"
+				wrap="Wrap" justifyContent="Center" class="">
+
+				<!-- <List id="master1List" items="{/IndustrySet}" mode="{device>/listMode}" 
+					noDataText="{i18n>masterListNoDataText}" select="onSelect" growing="true" 
+					growingScrollToLoad="true"> <items> <ObjectListItem id="master1ListItem" 
+					type="{device>/listItemType}" press="onSelect" title="{IndustryID}"> <attributes> 
+					<ObjectAttribute text="{Name}"/> <ObjectAttribute text="{Count}"/> </attributes> 
+					</ObjectListItem> </items> </List> -->
+				<items>
+					<!-- Need to implement filtering of tiles -->
+					<GenericTile xmlns:sap.suite.ui.commons="sap.suite.ui.commons"
+						id="__tile0" header="{Name}" press="onSelect" headerImage="{Image}"
+						size="S" class="sapUiSmallMargin tile">
+						<tileContent>
+							<TileContent xmlns:sap.suite.ui.commons="sap.suite.ui.commons"
+								id="__content0" unit="{Unit}" class="textBold">
+								<content>
+									<NumericContent tooltip="{AltText}" id="__content1"
+										value="{Count}" valueColor="Neutral" class="textBold"/>
+								</content>
+							</TileContent>
+
+						</tileContent>
+
+					</GenericTile>
+
+					<!-- <sap.suite.ui.commons:GenericTile xmlns:sap.suite.ui.commons="sap.suite.ui.commons" 
+						id="__tile1" header="Life Science" headerImage="sap-icon://stethoscope" size="M"> 
+						<sap.suite.ui.commons:tileContent> <sap.suite.ui.commons:TileContent xmlns:sap.suite.ui.commons="sap.suite.ui.commons" 
+						id="__content01" unit="{i18n>highPriority}"> <sap.suite.ui.commons:content> 
+						<sap.suite.ui.commons:NumericContent xmlns:sap.suite.ui.commons="sap.suite.ui.commons" 
+						tooltip="{AltText}" id="__content02" value="53" valueColor="Error" indicator="Up"/> 
+						</sap.suite.ui.commons:content> </sap.suite.ui.commons:TileContent> </sap.suite.ui.commons:tileContent> 
+						</sap.suite.ui.commons:GenericTile> <sap.suite.ui.commons:GenericTile xmlns:sap.suite.ui.commons="sap.suite.ui.commons" 
+						id="__tile3" header="Retail and Distribution" headerImage="sap-icon://cart-full" 
+						size="M"> <sap.suite.ui.commons:tileContent> <sap.suite.ui.commons:TileContent 
+						xmlns:sap.suite.ui.commons="sap.suite.ui.commons" id="__content03" unit="{i18n>highPriority}"> 
+						<sap.suite.ui.commons:content> <sap.suite.ui.commons:NumericContent xmlns:sap.suite.ui.commons="sap.suite.ui.commons" 
+						tooltip="{AltText}" id="__content13" value="42" valueColor="Error" indicator="Up"/> 
+						</sap.suite.ui.commons:content> </sap.suite.ui.commons:TileContent> </sap.suite.ui.commons:tileContent> 
+						</sap.suite.ui.commons:GenericTile> <sap.suite.ui.commons:GenericTile xmlns:sap.suite.ui.commons="sap.suite.ui.commons" 
+						id="__tile4" header="Manufacturing" headerImage="sap-icon://wrench" size="M"> 
+						<sap.suite.ui.commons:tileContent> <sap.suite.ui.commons:TileContent xmlns:sap.suite.ui.commons="sap.suite.ui.commons" 
+						id="__content04" unit="{i18n>highPriority}"> <sap.suite.ui.commons:content> 
+						<sap.suite.ui.commons:NumericContent xmlns:sap.suite.ui.commons="sap.suite.ui.commons" 
+						tooltip="{AltText}" id="__content05" value="57" valueColor="Error" indicator="Up"/> 
+						</sap.suite.ui.commons:content> </sap.suite.ui.commons:TileContent> </sap.suite.ui.commons:tileContent> 
+						</sap.suite.ui.commons:GenericTile> -->
+
+
+				</items>
+			</HBox>
+		</content>
+		<!--<footer> <Toolbar></Toolbar> </footer> -->
+	</Page>
+</mvc:View>

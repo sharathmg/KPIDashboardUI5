@@ -1,0 +1,33 @@
+{
+	"KPIListSet" : [ {
+		"ProcessGroupName" : "Perform Order Management",
+		"ProcessName"  :  "Develop Order Fulfillment Strategy",
+		"KPIName" : "Cycle Time : Customer Order Processing"
+	},
+	{
+		"ProcessGroupName" : "Perform Order Management",
+		"ProcessName"  :  "Develop Order Fulfillment Strategy",
+		"KPIName" : "Order to Bill Cycle Time"
+	},
+	{
+		"ProcessGroupName" : "Perform Order Management",
+		"ProcessName"  :  "Develop Order Fulfillment Strategy",
+		"KPIName" : "Cycle Time : Customer Order Processing"
+	},
+	{
+		"ProcessGroupName" : "Perform Order Management",
+		"ProcessName"  :  "Develop Order Fulfillment Strategy",
+		"KPIName" : "Total Volume : Order Received"
+	},
+	{
+		"ProcessGroupName" : "Perform Order Management",
+		"ProcessName"  :  "Capture Orders",
+		"KPIName" : "On time Customer order delivery rate"
+	},
+	{
+		"ProcessGroupName" : "Perform Order Management",
+		"ProcessName"  :  "Capture Orders",
+		"KPIName" : "Percentage of orders with Customized pricing"
+	}
+	]
+}
